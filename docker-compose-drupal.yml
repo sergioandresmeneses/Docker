@@ -1,4 +1,4 @@
-Docker compose for Drupal & Postgres
+#Docker compose for Drupal & Postgres
 version: '2'
 
 services:
@@ -11,6 +11,7 @@ services:
  postgres:
   image: postgres
   environment:
+  #you can use your own password in this variable
    - POSTGRES_PASSWORD=samedrupal
   volumes:
    - drupaldb:/var/lib/postgresql/data

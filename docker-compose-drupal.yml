@@ -1,0 +1,21 @@
+Docker compose for Drupal & Postgres
+version: '2'
+
+services:
+
+ drupal:
+  image: drupal
+  ports:
+   - '8080:80'
+
+ postgres:
+  image: postgres
+  environment:
+   - POSTGRES_PASSWORD=samedrupal
+  volumes:
+   - drupaldb:/var/lib/postgresql/data
+##  volume_driver: dvol
+
+volumes:
+ drupaldb:
+##  external: true
